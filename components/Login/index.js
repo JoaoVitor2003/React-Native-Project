@@ -10,6 +10,9 @@ const Login = () => {
   const handlePress = () => {
     navigation.navigate('Agendamento');
   };
+  const handleCadastroPress = () => {
+    navigation.navigate('Cadastro');
+  };
 
   const [show, setShow] = React.useState(false);
   return <Stack space={4} w="100%" alignItems="center">
@@ -34,18 +37,16 @@ const Login = () => {
             </Link>
     <Box alignItems="center" marginTop="5">
       <Pressable onPress={handlePress} w="260" h="60" borderRadius="20" bg='blue.500'><Text fontSize="25" textAlign="center" marginTop="2" bold>Entrar</Text></Pressable>
-      <HStack mt="6" justifyContent="center">
-      <Text fontSize="md" color="coolGray.900" _dark={{
-            color: "warmGray.200"
-          }}>
-              É um novo usuário?{" "}
-            </Text>
-            <Link _text={{
-            color: "blue.500",
-            fontWeight: "medium",
-            fontSize: "md"
-          }} href="#">Clique aqui</Link>
-          </HStack>
+      <HStack mt="6" justifyContent="center" alignItems="center" space={0}>
+  <Text fontSize="md" color="coolGray.900" _dark={{ color: "warmGray.200" }}>
+    É um novo usuário?{" "}
+  </Text>
+  <Pressable onPress={handleCadastroPress}>
+    <Text fontSize="md" marginTop="1" bold>
+      Clique aqui
+    </Text>
+  </Pressable>
+</HStack>
     </Box>
     </Stack>;
 };
